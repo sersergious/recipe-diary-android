@@ -11,11 +11,13 @@ import com.ingridientsinc.recipe.ui.AddRecipeScreen
 import com.ingridientsinc.recipe.ui.FavoritesScreen
 import com.ingridientsinc.recipe.ui.RecipeDetailScreen
 import com.ingridientsinc.recipe.ui.RecipeListScreen
+import com.ingridientsinc.recipe.ui.SearchMealScreen
 
 sealed class Screen(val route: String) {
     data object Browse : Screen("browse")
     data object Favorites : Screen("favorites")
     data object Add : Screen("add")
+    data object Search : Screen("search")
     data object Detail : Screen("detail/{recipeId}") {
         fun createRoute(recipeId: Long) = "detail/$recipeId"
     }
@@ -46,6 +48,10 @@ fun NavGraph(
                     }
                 }
             )
+        }
+
+        composable(Screen.Search.route) {
+            SearchMealScreen(recipeVm = viewModel)
         }
 
         composable(

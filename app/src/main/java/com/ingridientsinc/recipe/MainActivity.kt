@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
@@ -66,6 +67,12 @@ fun RecipesApp() {
                 label = { Text("Favorites") },
                 selected = currentRoute == Screen.Favorites.route,
                 onClick = { navController.switchTab(Screen.Favorites.route) }
+            )
+            item(
+                icon = { Icon(Icons.Default.Search, contentDescription = "Search") },
+                label = { Text("Search") },
+                selected = currentRoute == Screen.Search.route,
+                onClick = { navController.switchTab(Screen.Search.route) }
             )
         }
     ) {
