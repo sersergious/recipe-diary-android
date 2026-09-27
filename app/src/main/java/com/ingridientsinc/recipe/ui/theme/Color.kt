@@ -1,4 +1,4 @@
-package com.kuzmins2.recipe.ui.theme
+package com.ingridientsinc.recipe.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
